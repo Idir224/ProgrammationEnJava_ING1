@@ -1,0 +1,63 @@
+/*
+ * TP0 Exercice 3 (Calculatrice)
+ * 22 septembre 2026
+ */
+
+package calc.calculator;
+
+import java.util.Scanner;
+
+
+public class Calculator {
+
+    /**
+     *
+     * @author Idir SMAIL
+     * @param args
+     */
+    public static void main(String[] args) {
+        Scanner sc;
+        int operateur;
+
+        
+        do {
+            System.out.println("Please enter the operator : \n1) add\n2) substract\n3) multiply\n4) divide\n5) modulo");
+            sc = new Scanner(System.in);
+            operateur = sc.nextInt();
+        } while (operateur > 5 || operateur <= 0);
+
+        float operande1;
+        float operande2;
+
+        System.out.println("Enter the first value"); //Demande le 1er operande
+        operande1 = sc.nextFloat();
+
+        System.out.println("Enter the second value"); //Demande le 2e operande
+        operande2 = sc.nextFloat();
+
+        switch (operateur) {
+            case 1:
+                System.out.println("The result is : " + (operande1 + operande2));
+                break;
+
+            case 2:
+                System.out.println("The result is : " + (operande1 - operande2));
+                break;
+
+            case 3:
+                System.out.println("The result is : " + (operande1 * operande2));
+                break;
+
+            case 4:
+                System.out.println("The result is : " + (operande1 / operande2));
+                break;
+
+            case 5:
+                System.out.println("The result is : " + (operande1 % operande2));
+                break;
+                
+            default:
+                System.out.println("L'opérateur doit être compris entre 1 et 5");
+        }
+    }
+}
